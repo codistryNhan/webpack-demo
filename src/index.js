@@ -1,17 +1,16 @@
 import _ from 'lodash';
-import './css/style.css';
-import dog from './img/dog.jpg';
+import printMe from './print.js';
 
 function component(){
   let element = document.createElement('div');
+  let btn = document.createElement('button');
 
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
 
-  let dogPic = new Image();
-  dogPic.src = dog;
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = printMe;
 
-  element.appendChild(dogPic);
+  element.appendChild(btn);
 
   return element;
 }
